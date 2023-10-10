@@ -1,8 +1,8 @@
-# Time Series Classic to Deep
+# Modern Time Series Analysis
 
-Time Series Classic to Deep is a library dedicated to the field of time series forecasting. Our primary objective is to provide a comprehensive collection of both classical and deep learning-based algorithms for tackling time series forecasting tasks. 
+MTSA (Modern Time Series Analysis) is a library dedicated to the field of time series forecasting. Our primary objective is to provide a comprehensive collection of both classical and deep learning-based algorithms for tackling time series forecasting tasks. 
 
-We will gradually enhance and expand our library as the TSA(Time Series Analysis) course progresses.
+We will gradually enhance and expand our library as the TSA (Time Series Analysis) course progresses.
 
 [TSA home page](https://www.lamda.nju.edu.cn/yehj/TSA2023/)
 
@@ -42,8 +42,8 @@ All datasets can be found [here](https://box.nju.edu.cn/d/b33a9f73813048b8b00f/)
 - [ ] Box-Cox
 
 ## Metrics
-- [x] mse
-- [ ] mae
-- [ ] mase
-- [ ] mape
-- [ ] smape
+- [x] MSE
+- [ ] MAE
+- [ ] MASE
+- [ ] MAPE
+- [ ] SMAPE
