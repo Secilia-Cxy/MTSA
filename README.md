@@ -4,9 +4,13 @@ Time Series Classic to Deep is a library dedicated to the  field of time series 
 
 ## Usage examples
 
-`python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --model MeanForecast `
+```
+python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --model MeanForecast
+```
 
-`python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --model TsfKNN --n_neighbors 1 --msas MIMO --distance euclidean `
+```
+python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --model TsfKNN --n_neighbors 1 --msas MIMO --distance euclidean
+```
 
 ## Part 1. Dataset(20 pt)
 
@@ -67,7 +71,9 @@ path: `src/dataset/dataset.py`, `src/dataset/data_visualizer.py`
 
 - Test your implementation by creating an instance of the `CustomDataset` class and loading a custom dataset using the `get_dataset` function.
 - Verify that the data is read and split correctly by accessing the relevant attributes of the dataset object (e.g., `dataset.train_data`, `dataset.val_data`, `dataset.test_data`).
-- After loading the dataset, call the `data_visualize` function on the dataset object with a specific value of `t` to visualize the data. ==Plot the datasets in your report.==
+- After loading the dataset, call the `data_visualize` function on the dataset object with a specific value of `t` to visualize the data. 
+
+<font color= #FF0000>Note: Plot the datasets in your report.</font>
 
 ## Part 2. Transform(30 pt)
 
@@ -93,13 +99,15 @@ You need to implement the following custom transformation classes, each inheriti
 
 **d. BoxCox**
 
-==Write the mathematical formula for each algorithm in your report==
+<font color= #FF0000>Note: Write down the mathematical formula for each transform in your report.</font>
 
 ## Part 3 Metrics(20 pt)
 
 path: `src/utils/metrics.py`
 
 **Objective:** In this programming assignment, you will implement several metrics commonly used to evaluate the performance of predictive models. These metrics will help you assess the accuracy and quality of predictions made by models. Your task is to implement the Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Symmetric Mean Absolute Percentage Error (SMAPE), and Mean Absolute Scaled Error (MASE) metrics.
+
+<font color= #FF0000>Note: Write down the mathematical formula for each metric in your report.</font>
 
 ## Part 4 Models(30 pt)
 
@@ -119,27 +127,25 @@ You are provided with a base class named `MLForecastModel`, which defines the st
 
 **3. Testing:**
 
-- Test both `LinearRegressionForecast` and `ExponentialSmoothingForecast` on two different datasets: ETT and Custom. You can ==select any six datasets from these sources==.
+- Test both `LinearRegressionForecast` and `ExponentialSmoothingForecast` on two different datasets: ETT and Custom. You can select 2-3 datasets from these sources.
 - Load the selected datasets, split them into training and testing sets, and apply each forecasting model to make predictions on the testing data.
 - Calculate and record relevant metrics for each model and dataset pair, including Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Symmetric Mean Absolute Percentage Error (SMAPE), and Mean Absolute Scaled Error (MASE).
 - Present the evaluation metrics in a table format, showcasing the performance of each model on each dataset.
 
-==Write the mathematical formula for each algorithm in your report, and fill the table below.==
+<font color= #FF0000>Note: Write down the mathematical formula for each algorithm in your report, and fill the tables below.</font>
 
-|          |      | MSE  | MAE  | MAPE | SMAPE | MASE |
-| -------- | ---- | ---- | ---- | ---- | ----- | ---- |
-| dataset1 | LR   |      |      |      |       |      |
-|          | ES   |      |      |      |       |      |
-| dataset2 | LR   |      |      |      |       |      |
-|          | ES   |      |      |      |       |      |
-| dataset3 | LR   |      |      |      |       |      |
-|          | ES   |      |      |      |       |      |
-| dataset4 | LR   |      |      |      |       |      |
-|          | ES   |      |      |      |       |      |
-| dataset5 | LR   |      |      |      |       |      |
-|          | ES   |      |      |      |       |      |
-| dataset6 | LR   |      |      |      |       |      |
-|          | ES   |      |      |      |       |      |
+| Dataset  | Model | Transform | MSE  | MAE  | MAPE | SMAPE | MASE |
+| -------- | ----- | --------- | ----- | ----- | ----- | ----- | ----- |
+| dataset1 | AR    | None      |      |      |      |       |      |
+|          |       | Normalize |      |      |      |       |      |
+|          |       | Box-Cox   |      |      |      |       |      |
+|          |       | ...       |      |      |      |       |      |
+| dataset2 | EMA   | None      |      |      |      |       |      |
+|          |       | Normalize |      |      |      |       |      |
+|          |       | Box-Cox   |      |      |      |       |      |
+|          |       | ...       |      |      |      |       |      |
+
+
 
 
 
@@ -177,13 +183,13 @@ You are provided with a basic implementation of the `TsfKNN` class, which uses t
 - Implement parallelization techniques to speed up the KNN search process. You can use libraries like NumPy or parallel processing libraries to distribute the workload across multiple CPU cores.
 - Ensure that the parallelized code is well-optimized and provides substantial speedup for KNN search.
 
-**4. Testing and Evaluation:**
+**4. Testing:**
 
 - Test the enhanced `TsfKNN` model on real-world time series datasets, such as ETT and Custom datasets, to evaluate its performance.
 - Use appropriate evaluation metrics (e.g., MAE, MAPE, SMAPE, MASE) to measure the model's accuracy and compare it with the basic version of the model.
 - Compare the computational time required for various operations between the basic and enhanced versions.
 
-==Include the detailed implement of your algorithm and comparison of time and accuracy in your report.==
+<font color= #FF0000>Note: Include the detailed implement of your algorithm and comparison of time and accuracy in your report.</font>
 
 ## Submission
 
