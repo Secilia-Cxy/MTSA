@@ -1,6 +1,6 @@
-# Time Series Classic to Deep
+# Homework 1
 
-Time Series Classic to Deep is a library dedicated to the  field of time series forecasting. Our primary objective is to provide a comprehensive collection of both classical and deep learning-based algorithms for tackling time series forecasting tasks.
+Homework 1 involves the development of a comprehensive time series analysis framework, spanning various components including dataset handling, data transformations, metric calculations, and forecasting models.
 
 ## Usage examples
 
