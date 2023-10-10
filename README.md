@@ -151,7 +151,7 @@ You are provided with a base class named `MLForecastModel`, which defines the st
 
 
 
-## Part 5 TsfKNN*(optional 20pts)
+## Part 5 TsfKNN*(bonus 20pts)
 
 path: `src/models/TsfKNN.py`
 
