@@ -111,6 +111,8 @@ path: `src/utils/metrics.py`
 
 ## Part 4 Models(30 pts)
 
+path: `src/models/baselines.py`
+
 **Objective:** In this part, you will design and implement two forecasting models: Linear Regression and Exponential Smoothing. These models will take historical time series data of length `seq_len` as input and generate predictions of length `pred_len`. Your task is to create classes for both models, inheriting from the `MLForecastModel` base class, and implement the necessary methods. Additionally, you will test these models on two datasets: ETT and Custom, and present the evaluation metrics in a table format.
 
 **Instructions:**
@@ -150,6 +152,8 @@ You are provided with a base class named `MLForecastModel`, which defines the st
 
 
 ## Part 5 TsfKNN*(optional 20pts)
+
+path: `src/models/TsfKNN.py`
 
 **objective:** In this part, you will work with a basic version of the K-Nearest Neighbors (KNN) Time Series Forecasting Model (`TsfKNN`). Your goal is to enhance and improve the model's performance by implementing various improvements. The initial model takes historical time series data as input and generates predictions of length `pred_len` using the KNN algorithm. You will explore two main areas for improvement: enhancing distance calculation and reducing computational complexity. A simple introduction to this method can be found [here](https://cran.r-project.org/web/packages/tsfknn/vignettes/tsfknn.html#:~:text=Given%20a%20new%20example%2C%20KNN,values%20associated%20with%20its%20nearest).
 
