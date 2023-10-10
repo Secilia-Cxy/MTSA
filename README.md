@@ -12,7 +12,7 @@ python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --m
 python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --model TsfKNN --n_neighbors 1 --msas MIMO --distance euclidean
 ```
 
-## Part 1. Dataset(20 pt)
+## Part 1. Dataset(20 pts)
 
 path: `src/dataset/dataset.py`, `src/dataset/data_visualizer.py`
 
@@ -75,7 +75,7 @@ path: `src/dataset/dataset.py`, `src/dataset/data_visualizer.py`
 
 <font color= #FF0000>Note: Plot the datasets in your report.</font>
 
-## Part 2. Transform(30 pt)
+## Part 2. Transform(30 pts)
 
 path: `src/utils/transforms.py`
 
@@ -101,7 +101,7 @@ You need to implement the following custom transformation classes, each inheriti
 
 <font color= #FF0000>Note: Write down the mathematical formula for each transform in your report.</font>
 
-## Part 3 Metrics(20 pt)
+## Part 3 Metrics(20 pts)
 
 path: `src/utils/metrics.py`
 
@@ -109,7 +109,7 @@ path: `src/utils/metrics.py`
 
 <font color= #FF0000>Note: Write down the mathematical formula for each metric in your report.</font>
 
-## Part 4 Models(30 pt)
+## Part 4 Models(30 pts)
 
 **Objective:** In this part, you will design and implement two forecasting models: Linear Regression and Exponential Smoothing. These models will take historical time series data of length `seq_len` as input and generate predictions of length `pred_len`. Your task is to create classes for both models, inheriting from the `MLForecastModel` base class, and implement the necessary methods. Additionally, you will test these models on two datasets: ETT and Custom, and present the evaluation metrics in a table format.
 
@@ -149,7 +149,7 @@ You are provided with a base class named `MLForecastModel`, which defines the st
 
 
 
-## Part 5 TsfKNN(optional 20pt)
+## Part 5 TsfKNN*(optional 20pts)
 
 **objective:** In this part, you will work with a basic version of the K-Nearest Neighbors (KNN) Time Series Forecasting Model (`TsfKNN`). Your goal is to enhance and improve the model's performance by implementing various improvements. The initial model takes historical time series data as input and generates predictions of length `pred_len` using the KNN algorithm. You will explore two main areas for improvement: enhancing distance calculation and reducing computational complexity. A simple introduction to this method can be found [here](https://cran.r-project.org/web/packages/tsfknn/vignettes/tsfknn.html#:~:text=Given%20a%20new%20example%2C%20KNN,values%20associated%20with%20its%20nearest).
 
