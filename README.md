@@ -16,6 +16,8 @@ python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --m
 
 path: `src/dataset/dataset.py`, `src/dataset/data_visualizer.py`
 
+All datasets can be found [here](https://box.nju.edu.cn/d/b33a9f73813048b8b00f/).
+
 **Objective:** In this part, you will implement a custom dataset class, `CustomDataset`, to handle various time series datasets. Your custom dataset class will inherit from a base class, `DatasetBase`, and provide functionality to read and preprocess the data. This assignment aims to enhance your understanding of dataset handling in machine learning and time series analysis.
 
 **Instructions:**
