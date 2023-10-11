@@ -39,7 +39,7 @@ path: `src/dataset/dataset.py`, `src/dataset/data_visualizer.py`
   - `t`: An integer representing the number of continuous time points to visualize.
 - Ensure that your implementation is flexible enough to handle both single-channel and multi-channel datasets.
 
-**5. Testing:**
+**3. Testing:**
 
 - Test your implementation by creating an instance of the `CustomDataset` class and loading a custom dataset using the `get_dataset` function.
 - Verify that the data is read and split correctly by accessing the relevant attributes of the dataset object (e.g., `dataset.train_data`, `dataset.val_data`, `dataset.test_data`).
