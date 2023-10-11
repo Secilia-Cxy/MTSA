@@ -181,4 +181,4 @@ You are provided with a basic implementation of the `TsfKNN` class, which uses t
 - Submit the entire task, including all code and scripts, along with the `README.md` file and the PDF report, in a compressed archive (.zip).
 
 **4. Submission Deadline:**
-  2023-10-24 23:59
+  2023-10-24 23:55
