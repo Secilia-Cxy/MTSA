@@ -12,7 +12,7 @@ python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --m
 python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --target OT --model TsfKNN --n_neighbors 1 --msas MIMO --distance euclidean
 ```
 
-## Part 1. Dataset(30 pts)
+## Part 1. Dataset (30 pts)
 
 path: `src/dataset/dataset.py`, `src/dataset/data_visualizer.py`
 
@@ -47,7 +47,7 @@ path: `src/dataset/dataset.py`, `src/dataset/data_visualizer.py`
 
 **In your report, plot one of the provided datasets and analyze the dataset's properties briefly according to the images. You can design the way you plot your dataset freely to make the images more beautiful or easier to analyze.**
 
-## Part 2. Transform(20 pts)
+## Part 2. Transform (20 pts)
 
 path: `src/utils/transforms.py`
 
@@ -73,7 +73,7 @@ You need to implement the following custom transformation classes, each inheriti
 
 **In your report, write down the mathematical formula for each transformation.**
 
-## Part 3 Metrics(20 pts)
+## Part 3 Metrics (20 pts)
 
 path: `src/utils/metrics.py`
 
@@ -81,7 +81,7 @@ path: `src/utils/metrics.py`
 
 **In your report, write down the mathematical formula for each metric.**
 
-## Part 4 Models(30 pts)
+## Part 4 Models (30 pts)
 
 path: `src/models/baselines.py`
 
@@ -123,7 +123,7 @@ You are provided with a base class named `MLForecastModel`, which defines the st
 
 
 
-## Part 5 TsfKNN*(bonus 20pts)
+## Part 5 TsfKNN* (bonus 20pts)
 
 path: `src/models/TsfKNN.py`
 
