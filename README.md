@@ -101,7 +101,7 @@ You are provided with a base class named `MLForecastModel`, which defines the st
 
 **3. Testing:**
 
-- Test both `LinearRegressionForecast` and `ExponentialSmoothingForecast` on the dataset you plot in Part 1.
+- Test both `LR` and `ES` on the dataset you plot in Part 1.
 - Load the selected datasets, split them into training and testing sets, and apply each forecasting model to make predictions on the testing data.
 - Calculate and record relevant metrics for each model and dataset pair, including Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Symmetric Mean Absolute Percentage Error (SMAPE), and Mean Absolute Scaled Error (MASE).
 - Present the evaluation metrics in a table format, showcasing the performance of each model on each dataset.
