@@ -7,7 +7,7 @@ class ZeroForecast(MLForecastModel):
     def __init__(self, args) -> None:
         super().__init__()
 
-    def _fit(self, X: np.ndarray, Y=None) -> None:
+    def _fit(self, X: np.ndarray) -> None:
         pass
 
     def _forecast(self, X: np.ndarray, pred_len) -> np.ndarray:
@@ -18,7 +18,7 @@ class MeanForecast(MLForecastModel):
     def __init__(self, args) -> None:
         super().__init__()
 
-    def _fit(self, X: np.ndarray, Y=None) -> None:
+    def _fit(self, X: np.ndarray) -> None:
         pass
 
     def _forecast(self, X: np.ndarray, pred_len) -> np.ndarray:
