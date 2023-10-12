@@ -14,7 +14,7 @@ class MLForecastModel:
         self._fit(X)
         self.fitted = True
 
-    def _fit(self, X: np.ndarray):
+    def _fit(self, X: np.ndarray, Y=None):
         raise NotImplementedError
 
     def _forecast(self, X: np.ndarray, pred_len) -> np.ndarray:
