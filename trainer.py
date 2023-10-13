@@ -35,7 +35,8 @@ class MLTrainer:
             subseries = np.concatenate(([sliding_window_view(v, seq_len + pred_len) for v in test_data]))
             test_X = subseries[:, :seq_len]
             test_Y = subseries[:, seq_len:]
-        fore = self.model.forecast(test_X, pred_len=pred_len)
+        te_X = self.transform.transform(test_X)
+        fore = self.model.forecast(te_X, pred_len=pred_len)
         fore = self.transform.inverse_transform(fore)
         print('mse:', mse(fore, test_Y))
         # print('mae:', mae(fore, test_Y))
