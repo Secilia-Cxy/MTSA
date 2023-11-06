@@ -11,18 +11,10 @@ python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --model MeanFor
 python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --model TsfKNN --n_neighbors 1 --msas MIMO --distance euclidean
 ```
 
-## Part 1. Update Existing Transformation Classes (10 pts)
+## Part 1 Update Existing Transformation Class (10 pts)
 path: `src/utils/transforms.py`
 
-**Objective:** Modify each custom transformation class to handle multivariate data. 
-
-**a. Normalization**
-
-**b. Standardization**
-
-**c. MeanNormalization**
-
-**d. BoxCox** (input might less than 0)
+**Objective:** Modify the `Standardization` transformation class to handle multivariate data.
 
 
 ## Part 2 TsfKNN (40 pts)
@@ -51,7 +43,7 @@ Note that lag-base embeddings are already implemented in the `TsfKNN` model. You
 path: `src/models/DLinear.py`
 
 **Objective:** 
-Implement the DLinear model, a deep learning-based approach for time series forecasting, as described in the provided paper.
+Implement the DLinear model as described in the provided [paper](https://arxiv.org/pdf/2205.13504.pdf).
 You can define the dataloader yourself or modify `trainer.py` if necessary.
 
 ## Part 4 Decomposition (20 pts)
@@ -91,7 +83,7 @@ Explore other decomposition methods as you like.
 
 **2. Decomposition Method Evaluation for TsfKNN and DLinear**
 
-First choose the best normalization method for models and apply different decomposition methods.
+Transform the data by Standardization and apply different decomposition methods.
 In your report, write down the details of your method and fill the table below.
     
 | Model  | Decomposition | MSE  | MAE  |
