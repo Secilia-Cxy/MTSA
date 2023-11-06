@@ -55,6 +55,7 @@ class ETTDataset(DatasetBase):
         self.data_path = args.data_path
         self.target = args.target
         self.type = 'ETT'
+        self.frequency = args.frequency
         super(ETTDataset, self).__init__(args)
 
     def read_data(self):
@@ -79,13 +80,14 @@ class ETTDataset(DatasetBase):
 
     def split_data(self):
         self.split = True
-        self.num_train = int(self.ratio_train * self.data.shape[1])
-        self.num_val = int(self.ratio_val * self.data.shape[1])
+        if self.frequency == 'h':
+            self.num_train = 18 * 30 * 24
+            self.num_val = 5 * 30 * 24
+        elif self.frequency == 'm':
+            self.num_train = 18 * 30 * 24 * 4
+            self.num_val = 5 * 30 * 24 * 4
         self.train_data = self.data[:, :self.num_train, :]
-        if self.num_val == 0:
-            self.val_data = None
-        else:
-            self.val_data = self.data[:, self.num_train: self.num_train + self.num_val, :]
+        self.val_data = self.data[:, self.num_train: self.num_train + self.num_val, :]
         self.test_data = self.data[:, self.num_train + self.num_val:, :]
 
 

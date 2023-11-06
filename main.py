@@ -20,6 +20,7 @@ def get_args():
     parser.add_argument('--ratio_train', type=int, default=0.7, help='train dataset length')
     parser.add_argument('--ratio_val', type=int, default=0, help='validate dataset length')
     parser.add_argument('--ratio_test', type=int, default=0.3, help='input sequence length')
+    parser.add_argument('--frequency', type=str, default='h', help='frequency of time series data, options: [h, m]')
 
     # forcast task config
     parser.add_argument('--seq_len', type=int, default=96, help='input sequence length')

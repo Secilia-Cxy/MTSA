@@ -11,7 +11,7 @@ class ZeroForecast(MLForecastModel):
         pass
 
     def _forecast(self, X: np.ndarray, pred_len) -> np.ndarray:
-        return np.zeros((X.shape[0], pred_len))
+        return np.zeros((X.shape[0], pred_len, X.shape[2]))
 
 
 class MeanForecast(MLForecastModel):
@@ -22,7 +22,7 @@ class MeanForecast(MLForecastModel):
         pass
 
     def _forecast(self, X: np.ndarray, pred_len) -> np.ndarray:
-        mean = np.mean(X, axis=-1).reshape(X.shape[0], 1)
+        mean = np.mean(X, axis=1).reshape(X.shape[0], 1, X.shape[2])
         return np.repeat(mean, pred_len, axis=1)
 
 # TODO: add other models based on MLForecastModel

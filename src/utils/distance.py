@@ -2,6 +2,7 @@ import numpy as np
 
 
 def euclidean(A, B):
-    return np.linalg.norm(B - A, axis=1)
+    return np.sqrt(np.sum(np.sum((A - B) ** 2, axis=1), axis=1))
 
 # TODO: add more distance
+
