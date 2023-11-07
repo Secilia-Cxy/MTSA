@@ -30,13 +30,13 @@ Refine the TsfKNN model to improve its forecasting ability for multivariate time
 
 Implement Multivariate Distance Metrics
 Enhance the euclidean function or implement additional functions to handle multivariate sequences.
-Make sure the distance function can compare two multivariate time series of the same length and return a scalar distance value.
+Make sure the distance function can compare two multivariate time series and return a scalar distance value.
 
 **2. Temporal Embedding Concepts**
 
 Learn about temporal embeddings and how they can encapsulate the temporal information within a time series.
-Explore different embedding techniques such as lag-based embeddings, Fourier transforms, autoencoder representations, or other methods. (choose one or more is ok) 
-Note that lag-base embeddings are already implemented in the `TsfKNN` model. You can modify the method using the number of time lag as you like.
+Explore different embedding techniques such as lag-based embeddings, Fourier transforms, autoencoder representations, or other methods (choose one or more is ok) . 
+Note that lag-base embeddings are already implemented in the `TsfKNN` model. You can modify the time lag parameter tau and dimension m as described in PPT to improve the performance.
 
 ## Part 3 DLinear (30 pts)
 
