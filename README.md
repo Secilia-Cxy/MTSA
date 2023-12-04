@@ -67,12 +67,12 @@ Tips: You can choose the best model on one dateset and use it to predict the oth
 The experimental settings used here are the same as [TimesNet](https://arxiv.org/abs/2210.02186). You can easily compare your model with past SOTA models.
 If your model is better than SOTA, you can get 15 pts extra.
 
-| Models | Decomposition | MSE  | MAE  |
- |--------|---------------| ----- | ----- |
-| TsfKNN | MA            |      |      |
- |        | ...           |      |      |
+| Dataset | pred_len | Models | Decomposition | MSE  | MAE  |
+ |---------|----------|--------|------------| ----- | ----- |
+| ETTh1   | 96       | TsfKNN | MA     |      |      |
+ | ...     |          |        |      |      |      |
 
-
+ 
 
 ## Submission
 

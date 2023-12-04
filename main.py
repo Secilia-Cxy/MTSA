@@ -21,7 +21,7 @@ def get_args():
 
     # forcast task config
     parser.add_argument('--seq_len', type=int, default=96, help='input sequence length')
-    parser.add_argument('--pred_len', type=int, default=32, help='prediction sequence length')
+    parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length in [96, 192, 336, 720]')
 
     # model define
     parser.add_argument('--model', type=str, required=True, default='MeanForecast', help='model name')
