@@ -81,4 +81,4 @@ your model with past SOTA models.
   compressed archive (.zip).
 
 **4. Submission Deadline:**
-2023-01-15 23:55
+2024-01-15 23:55
