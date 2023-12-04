@@ -1,6 +1,6 @@
-# Homework 2
+# Homework 3
 
-Homework 2 considers multivariate time series (multi input multi output). The dataset used here is `ETTh1`.
+Homework 3 considers multivariate time series (multi input multi output). The dataset used here is `ETTh1`, `ETTh2`, `ETTm1`, `ETTm2`, `Electricity`, `Traffic`, `Weather`, `Exchange`, `ILI`.
 ## Usage examples
 
 ```
@@ -11,81 +11,63 @@ python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --model MeanFor
 python main.py --data_path ./dataset/ETT/ETTh1.csv --dataset ETT --model TsfKNN --n_neighbors 1 --msas MIMO --distance euclidean
 ```
 
-## Part 1 Update Existing Transformation Class (10 pts)
-path: `src/utils/transforms.py`
-
-**Objective:** Modify the `Standardization` transformation class to handle multivariate data.
-
-
-## Part 2 TsfKNN (40 pts)
-
-path: `src/models/TsfKNN.py`
-
-**Objective:**
-Refine the TsfKNN model to improve its forecasting ability for multivariate time series. This involves implementing a robust distance metric for multivariate data and designing an effective temporal embedding strategy.
-
-**Instructions:**
-
-**1. Multivariate Distance Metrics**
-
-Implement additional distance metrics to handle multivariate sequences.
-Make sure the distance function can compare two multivariate time series and return a scalar distance value.
-
-**2. Temporal Embedding Concepts**
-
-Learn about temporal embeddings and how they can encapsulate the temporal information within a time series.
-Explore different embedding techniques such as Fourier transforms, autoencoder representations, or other methods. 
-Note that lag-based embeddings are already implemented in the `TsfKNN` model. You can modify the time lag parameter tau and dimension m as described in PPT to improve the performance.
-
-## Part 3 DLinear (30 pts)
-
-path: `src/models/DLinear.py`
-
-**Objective:** 
-Implement the DLinear model as described in the provided [paper](https://arxiv.org/pdf/2205.13504.pdf).
-You can define the dataloader yourself or modify `trainer.py` if necessary.
-
-## Part 4 Decomposition (20 pts)
-
+## Part 1 Decomposition (20 pts)
 path: `src/utils/decomposition.py`
 
+**Objective:** Implement STL and X11 decomposition methods to separate the trend and seasonal components from the original time series data.
+
+
+## Part 2 Model (20 pts)
+
+path: `src/models/ARIMA.py`
+path: `src/models/ThetaMethod.py`
+
+**Objective:** Implement the ARIMA and Theta forecasting models.
+
+## Part 3 ResidualModel (60 pts)
+
+path: `src/models/ResidualModel.py`
+
 **Objective:**
-Implement time series decomposition methods to separate the trend and seasonal components from the original time series data and integrate these methods into the TsfKNN and DLinear forecasting models.
+The objective is to create an ensemble forecasting model that integrates various individual 
+models you've implemented earlier, such as LR, ETS, DLinear, TSFKNN, ARIMA, and ThetaMethod. 
+The aim is to leverage the strengths of each model for improved forecasting accuracy.
 
 **Instructions:**
 
-**1. Moving Average Decomposition**
+**1. Decomposition-Based Forecasting:**
 
-Implement the moving_average function that calculates the trend and seasonal components using a moving average with a specified seasonal period.
+Implement time series decomposition to separate trend and seasonal components from the original data.
+Apply different forecasting models to predict the trend and seasonal components independently.
+Combine these predictions to form a comprehensive forecast.
 
-**2. Differential Decomposition**
+**2. Residual Network Approach:**
 
-Implement the differential_decomposition function that separates the trend and seasonal components by differencing the time series data.
-Determine how to calculate the differences and reconstruct the trend and seasonal components from these differences.
+Employ a residual network strategy, inspired by the N-Beats model, which uses multiple MLPs, and each MLP in the network aims to predict the residuals (errors) of the preceding MLP.
+For example, the residual from a TSFKNN prediction could be modeled using DLinear.
+The final forecast is the cumulative sum of predictions from all models.
 
-**3. Other Decomposition Method (bonus 10 pts)**
+**3. Diverse Prediction Methods:**
 
-Explore other decomposition methods as you like.
+Experiment with various forecasting methods, such as recursive, non-recursive, direct, and indirect approaches.
 
-## Part 5 Evaluation
+**4. Combining Methods for Enhanced Accuracy:**
+
+You can combine the above methods to get a better result, not necessary to use all of them.
+
+
+## Part 4 Evaluation
 
 **Instructions:**
 
-**1. Exploring Temporal Embedding and Distance Combinations in TsfKNN**
+**1. Apply your ResidualModels to the datasets specified at the start of this project:**
 
-  In your report, write down the details of your method and fill the table below.
+Tips: You can choose the best model on one dateset and use it to predict the other datasets.
 
- | Temporal Embedding | Distance  | MSE  | MAE  |
- |--------------------|-----------| ----- | ----- |
-| lag-based (lag=96) | euclidean      |      |      |
- |                    | ...       |      |      |
+The experimental settings used here are the same as TimesNet. You can easily compare your model with past SOTA models.
+If your model is better than SOTA, you can get 10 pts extra.
 
-**2. Decomposition Method Evaluation for TsfKNN and DLinear**
-
-Transform the data by Standardization and apply different decomposition methods.
-In your report, write down the details of your method and fill the table below.
-    
-| Model  | Decomposition | MSE  | MAE  |
+| Models | Decomposition | MSE  | MAE  |
  |--------|---------------| ----- | ----- |
 | TsfKNN | MA            |      |      |
  |        | ...           |      |      |
@@ -111,4 +93,4 @@ In your report, write down the details of your method and fill the table below.
 - Submit the entire task, including all code and scripts, along with the `README.md` file and the PDF report, in a compressed archive (.zip).
 
 **4. Submission Deadline:**
-  2023-11-21 23:55
+  2023-01-15 23:55
