@@ -43,7 +43,7 @@ Combine these predictions to form a comprehensive forecast.
 
 **2. Residual Network Approach:**
 
-Employ a residual network strategy, inspired by the N-Beats model, which uses multiple MLPs, and each MLP in the network aims to predict the residuals (errors) of the preceding MLP.
+Employ a residual network strategy, inspired by [N-Beats](https://arxiv.org/pdf/1905.10437.pdf), which uses multiple MLPs, and each MLP in the network aims to predict the residuals (errors) of the preceding MLP.
 For example, the residual from a TSFKNN prediction could be modeled using DLinear.
 The final forecast is the cumulative sum of predictions from all models.
 
@@ -64,8 +64,8 @@ You can combine the above methods to get a better result, not necessary to use a
 
 Tips: You can choose the best model on one dateset and use it to predict the other datasets.
 
-The experimental settings used here are the same as TimesNet. You can easily compare your model with past SOTA models.
-If your model is better than SOTA, you can get 10 pts extra.
+The experimental settings used here are the same as [TimesNet](https://arxiv.org/abs/2210.02186). You can easily compare your model with past SOTA models.
+If your model is better than SOTA, you can get 15 pts extra.
 
 | Models | Decomposition | MSE  | MAE  |
  |--------|---------------| ----- | ----- |
