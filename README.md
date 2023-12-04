@@ -1,6 +1,6 @@
 # Homework 3
 
-Homework 3 considers multivariate time series (multi input multi output). The dataset used here is `ETTh1`, `ETTh2`, `ETTm1`, `ETTm2`, `Electricity`, `Traffic`, `Weather`, `Exchange`, `ILI`.
+Homework 3 considers multivariate time series (multi input multi output). The datasets used here are `ETTh1`, `ETTh2`, `ETTm1`, `ETTm2`, `Electricity`, `Traffic`, `Weather`, `Exchange`, `ILI`.
 ## Usage examples
 
 ```
