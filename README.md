@@ -93,4 +93,4 @@ If your model is better than SOTA, you can get 15 pts extra.
 - Submit the entire task, including all code and scripts, along with the `README.md` file and the PDF report, in a compressed archive (.zip).
 
 **4. Submission Deadline:**
-  2023-01-15 23:55
+  2024-01-15 23:55
