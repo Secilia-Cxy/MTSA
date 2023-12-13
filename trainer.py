@@ -21,11 +21,11 @@ class MLTrainer:
             pred_len = dataset.test_data.shape[-1]
         else:
             test_data = dataset.test_data
+            test_data = self.transform.transform(test_data)
             subseries = np.concatenate(([sliding_window_view(v, (seq_len + pred_len, v.shape[-1])) for v in test_data]))
             test_X = subseries[:, 0, :seq_len, :]
             test_Y = subseries[:, 0, seq_len:, :]
-        te_X = self.transform.transform(test_X)
+        te_X = test_X
         fore = self.model.forecast(te_X, pred_len=pred_len)
-        fore = self.transform.inverse_transform(fore)
         print('mse:', mse(fore, test_Y))
         print('mae:', mae(fore, test_Y))
