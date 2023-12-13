@@ -9,12 +9,12 @@ class DatasetBase:
         self.ratio_test = args.ratio_test
         self.split = False
         self.read_data()
-        self.split_data()
+        self.split_data(args.seq_len)
 
     def read_data(self):
         raise NotImplementedError
 
-    def split_data(self):
+    def split_data(self, seq_len):
         pass
 
 
@@ -78,19 +78,20 @@ class ETTDataset(DatasetBase):
         self.data_cols = cols + [self.target]
         self.data = np.expand_dims(data[self.data_cols].values, axis=0)
 
-    def split_data(self):
+    def split_data(self, seq_len):
         self.split = True
         if self.frequency == 'h':
             self.num_train = 12 * 30 * 24
             self.num_val = 4 * 30 * 24
-            self.num_test = 8 * 30 * 24
+            self.num_test = 4 * 30 * 24
         elif self.frequency == 'm':
             self.num_train = 12 * 30 * 24 * 4
             self.num_val = 4 * 30 * 24 * 4
-            self.num_test = 8 * 30 * 24 * 4
+            self.num_test = 4 * 30 * 24 * 4
         self.train_data = self.data[:, :self.num_train, :]
-        self.val_data = self.data[:, self.num_train: self.num_train + self.num_val, :]
-        self.test_data = self.data[:, self.num_train + self.num_val: self.num_train + self.num_val + self.num_test, :]
+        self.val_data = self.data[:, self.num_train - seq_len: self.num_train + self.num_val, :]
+        self.test_data = self.data[:,
+                         self.num_train + self.num_val - seq_len: self.num_train + self.num_val + self.num_test, :]
 
 
 class CustomDataset(DatasetBase):
@@ -126,15 +127,15 @@ class CustomDataset(DatasetBase):
         self.data_cols = cols + [self.target]
         self.data = np.expand_dims(data[self.data_cols].values, axis=0)
 
-    def split_data(self):
+    def split_data(self, seq_len):
         self.split = True
         tot_num = self.data.shape[1]
         self.num_train = int(tot_num * 0.7)
         self.num_test = int(tot_num * 0.2)
         self.num_val = tot_num - self.num_train - self.num_test
         self.train_data = self.data[:, :self.num_train, :]
-        self.val_data = self.data[:, self.num_train: self.num_train + self.num_val, :]
-        self.test_data = self.data[:, self.num_train + self.num_val: self.num_train + self.num_val + self.num_test, :]
+        self.val_data = self.data[:, self.num_train - seq_len: self.num_train + self.num_val, :]
+        self.test_data = self.data[:, self.num_train + self.num_val - seq_len:, :]
 
 
 def get_dataset(args):
