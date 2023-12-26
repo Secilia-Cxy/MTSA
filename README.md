@@ -26,7 +26,7 @@ Baseline: PatchTST, Transformer
 
 The primary obstacle impeding the advancement of pre-trained models for time series analysis lies in the scarcity of extensive training data. However, can we harness the power of Large Language Models (LLMs), which have undergone training on billions of tokens, to elevate our model's performance? A notable example, "One Fits All" (available at [link](https://arxiv.org/abs/2302.11939)), illustrates how a pre-trained LLM, when equipped with input embedding and output head layers, can be employed to construct a highly effective time series forecasting model, yielding remarkable results. Although we may not possess the same level of hardware resources as outlined in their work, we can make use of chatGPT's capabilities via an interactive dialogue-based approach, thereby aiding us in achieving superior predictions, as what"PromptCast" (available at [link](https://arxiv.org/abs/2210.08964)) does. Within this framework, we have the opportunity to delve into time series forecasting methodologies that leverage the prowess of large language models. In this context, you need to explore different ways to incorporate the pre-trained LLMs into your time series forecasting model.
 
-![image-PromptCast](imgs\PromptCast.png)
+![streaming.jpg](imgs%2FPromptCast.png)
 
 Baseline: PatchTST
 
