@@ -11,8 +11,10 @@ class MLTrainer:
 
     def train(self):
         train_X = self.dataset.train_data
-        t_X = self.transform.transform(train_X)
-        self.model.fit(t_X)
+        train_X = self.transform.transform(train_X)
+        val_X = self.dataset.val_data
+        val_X = self.transform.transform(val_X)
+        self.model.fit(train_X, val_X)
 
     def evaluate(self, dataset, seq_len=96, pred_len=96):
         if dataset.type == 'm4':
