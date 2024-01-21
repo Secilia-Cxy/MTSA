@@ -58,11 +58,11 @@ class DLForecastModel(MLForecastModel):
         if not os.path.exists(path):
             os.makedirs(path)
 
-        # train
-        self.model.train()
         train_epochs = self.args.epochs
         early_stopping = EarlyStopping(patience=self.args.patience, verbose=True)
         for epoch in range(train_epochs):
+            # train
+            self.model.train()
             train_loss = 0
             epoch_time = time.time()
             for batch_idx, (batch_x, batch_y) in enumerate(train_loader):
