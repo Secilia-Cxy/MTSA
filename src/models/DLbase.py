@@ -99,6 +99,8 @@ class DLForecastModel(MLForecastModel):
                 break
 
             adjust_learning_rate(self.optimizer, epoch + 1, self.args)
+        best_model_path = path + '/' + 'checkpoint.pth'
+        self.model.load_state_dict(torch.load(best_model_path))
 
     def _forecast(self, X: np.ndarray, pred_len) -> np.ndarray:
         test_loader = DataLoader(DLDataset(X, self.args.seq_len, self.args.pred_len, mode='predict'),
